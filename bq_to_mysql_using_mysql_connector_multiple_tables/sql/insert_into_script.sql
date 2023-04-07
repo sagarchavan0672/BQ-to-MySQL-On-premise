@@ -1,0 +1,1 @@
+INSERT INTO {}(emp_id, Name, emp_add ) VALUES("%s", "%s", "%s");
