@@ -1,21 +1,21 @@
 ---
 args : #common arguments
  location: 'us-central1' #Bigquery table location
- bucket_name: 'bkt-dmgcp-del-ce-temp'   #bucket to export table into files from Bigquery
- composer_bucket: 'us-central1-dm-composer-d5b3de0f-bucket' #Bucket of dag files,config and sql files
+ bucket_name: '{bucket_name}'   #bucket to export table into files from Bigquery
+ composer_bucket: '{composer_bucket}' #Bucket of dag files,config and sql files
  export_file_name: 'bq_to_gcs_file.csv' #file name for bq to gcs export .csv file
  merged_file_name: 'merged_bq_to_cloudsql_test_file_inc.csv' #file name for merged csv files 
- cloudsql_instance: 'posgre-sql-cisco-poc' #cloudSQL instance name
- cloudsql_project: 'dmgcp-del-ce' #GCP project of cloudSQL instance 
+ cloudsql_instance: '{cloud_sql_instane_name}' #cloudSQL instance name
+ cloudsql_project: 'cloud_sql_project' #GCP project of cloudSQL instance 
  cloudsql_importuser: 'postgres' #cloudSQL instance user
- vm_instance_user: 'sagar_chavan@jump-host'
+ vm_instance_user: '{vm_instance@name}'
  vm_instance_zone: 'us-central1-a'
  mount_directory: "/home/sagar_chavan"
 
  
  
 EMPLOYEE : #table 1
- project_name : 'dmgcp-del-ce'
+ project_name : 'project_name'
  dataset_name: 'DB_CE_TEMP'
  bq_table: 'EMPLOYEE'
  cloudsql_database: 'postgres'
@@ -25,7 +25,7 @@ EMPLOYEE : #table 1
  
  
 EMPLOYEE_1 : #table 2
- project_name : 'dmgcp-del-ce'
+ project_name : 'project_name'
  dataset_name: 'DB_CE_TEMP'
  bq_table: 'EMPLOYEE_1'
  cloudsql_database: 'postgres'
@@ -35,7 +35,7 @@ EMPLOYEE_1 : #table 2
  
  
 EMPLOYEE_2 : #table 2
- project_name : 'dmgcp-del-ce'
+ project_name : 'project_name'
  dataset_name: 'DB_CE_TEMP'
  bq_table: 'EMPLOYEE_2'
  cloudsql_database: 'postgres'
