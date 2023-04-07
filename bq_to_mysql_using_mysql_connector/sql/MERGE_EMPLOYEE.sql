@@ -1,0 +1,1 @@
+WITH upsert as(update employee t2 set empfname=t1.empfname,emplname= t1.emplname  from staging_employee t1 where t1.empcode = t2.empcode RETURNING t2.*) insert into employee select p.empcode, p.empfname from staging_employee p where p.empcode not in (select q.empcode from upsert q);
