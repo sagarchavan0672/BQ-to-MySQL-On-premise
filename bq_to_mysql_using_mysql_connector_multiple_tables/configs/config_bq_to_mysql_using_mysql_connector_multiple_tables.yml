@@ -1,27 +1,27 @@
 ---
 args : #common arguments
  location: 'us-central1' #Bigquery table location
- bucket_name: 'bkt-dmgcp-del-ce-temp'   #bucket to export table into files from Bigquery
- composer_bucket: 'us-central1-dm-composer-d5b3de0f-bucket' #Bucket of dag files,config and sql files
+ bucket_name: '{bucket_name}'   #bucket to export table into files from Bigquery
+ composer_bucket: '{composer_bucket}' #Bucket of dag files,config and sql files
  export_file_name: 'bq_to_gcs_file.csv' #file name for bq to gcs export .csv file
  merged_file_name: 'merged_bq_to_cloudsql_test_file_inc.csv' #file name for merged csv files 
  cloudsql_project: 'dmgcp-del-ce' #GCP project of cloudSQL instance 
- mysql_host: "172.16.128.107"
- mysql_user: 'dmuser'
- mysql_database: 'my_db'
- mysql_password: 'dmpoc@2022'
+ mysql_host: "{mysql_host}"
+ mysql_user: '{mysql_user}'
+ mysql_database: '{mysql_database}'
+ mysql_password: '{mysql_password}'
 
  
  
 TABLE1 : #table 1
- project_name : 'dmgcp-del-ce'
+ project_name : '{project_name}'
  dataset_name: 'DB_CE_TEMP'
  bq_table: 'EMP'
  type_load: 'HIST'     # Type of load must be defined : HIST/INCR
  insert_into_script: 'sql/insert_into_script_emp.sql'
  
 TABLE2 : #table 1
- project_name : 'dmgcp-del-ce'
+ project_name : '{project_name}'
  dataset_name: 'DB_CE_TEMP'
  bq_table: 'EMP1'
  type_load: 'HIST'     # Type of load must be defined : HIST/INCR
