@@ -1,0 +1,3 @@
+dataset_table: 'DB_CE_TEMP.EMP'
+database: 'my_db'
+mysql_table_name: 'EMP'
